@@ -18,7 +18,7 @@ var gulp 			= require('gulp'),
 gulp.task('sass', function() {								/*****/
 	return gulp.src('src/sass/**/*.+(sass|scss)')  
 	.pipe(sass().on('error', sass.logError))
-	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7']),  { cascade: true }))
+	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7']),  { cascade: true })
 	.pipe(gulp.dest('src/css'))
 	.pipe(browserSync.reload({stream: true}))
 });
@@ -109,7 +109,7 @@ gulp.task('bhtml', function() {
 
 gulp.task('build', gulp.parallel('clean', 'img', 'sass', 'scripts','bcss','bjs','bfonts','bhtml'));
 
-gulp.task('default', gulp.parallel('sass','css-libs' ,'browser-sync','scripts', 'watch'));
+gulp.task('start', gulp.parallel('sass','css-libs' ,'browser-sync','scripts', 'watch'));
 
 
 gulp.task('clear', function() {
